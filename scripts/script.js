@@ -2,18 +2,22 @@ $(document).ready(function(){
 
   var move = 1;
   var play = true;
+  var lastMove = 'X';
 
   $("#board tr td").click(function() {
     if ($(this).text()=="" && play) {
-      if ((move%2)==1) { $(this).append("X"); }
+      if ((move%2)==1) { $(this).append("X");
+    }
       else { $(this).append("O"); }
       move++;
+
       if (checkForWinner()!=-1 && checkForWinner()!="") {
 	if (checkForWinner()=="X") { alert("Player X wins!"); }
         else { alert("Player O wins!"); }
         play = true;
       }
-    }
+    };
+  alterPlayer();
   });
 
   function checkForWinner() {
@@ -52,4 +56,15 @@ $(document).ready(function(){
           var space8 = $("#board tr:nth-child(3) td:nth-child(2)").html('');
           var space9 = $("#board tr:nth-child(3) td:nth-child(3)").html('');
         });
+
+  function alterPlayer () {
+    if(lastMove === 'X') {
+      lastMove = 'O';
+        $('.name').text('O'); //<--- Alternate with O
+    }
+    else {
+      lastMove = 'X';
+        $('.name').text('X'); //<--- Alternate with X
+    }
+  }
 });
