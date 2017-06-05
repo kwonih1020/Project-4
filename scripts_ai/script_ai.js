@@ -1,12 +1,11 @@
 var player = 'x';
 var ai = 'o';
 var aiMove;
-var turn = 0;
-var lastMove = 'X';
+var move = 0;
 var counter_X = 0;
 var counter_O = 0;
 
-var boardCheck;
+var tableCheck;
 var t1;
 var t2;
 var t3;
@@ -17,24 +16,22 @@ var b1;
 var b2;
 var b3;
 
-var checkWin;
+var checkForWinner;
 var xWin = false;
 var oWin = false;
-var winAlert;
 
 var newGame;
 var clearBoard;
 
 var newGame = function () {
     $('td').one('click', function (event) {
-        if (turn == 0) {
+        if (move == 0) {
             $(this).text(player);
-            boardCheck();
-            checkWin();
-            turn == 1;
+            tableCheck();
+            move == 1;
             aiMove();
-            boardCheck();
-            checkWin();
+            tableCheck();
+            checkForWinner();
         }
     });
 };
@@ -46,75 +43,75 @@ $(document).ready(function () {
 var aiMove = function () {
     if (t1 == "" && ((t3 == "x" && t2 == "x") || (b3 == "x" && m2 == "x") || (b1 == "x" && m1 == "x"))) {
         $('#t1').text("o");
-        turn = 0;
+        move = 0;
     } else {
       if (t2 == "" && ((t1 == "x" && t3 == "x") || (b2 == "x" && m2 == "x"))) {
         $('#t2').text("o");
-        turn = 0;
+        move = 0;
         }
         else{
         if (t3 == "" && ((t1 == "x" && t2 == "x") || (b1 == "x" && m2 == "x") || (b3 == "x" && m3 == "x"))) {
             $('#t3').text("o");
-            turn = 0;
+            move = 0;
         }
             else{
             if (b3 == "" && ((b1 == "x" && b2 == "x") || (t1 == "x" && m2 == "x") || (t3 == "x" && m3 == "x"))) {
                 $('#b3').text("o");
-                turn = 0;
+                move = 0;
         }
                 else{
                 if (b1 == "" && ((b3 == "x" && b2 == "x") || (t3 == "x" && m2 == "x") || (t1 == "x" && m1 == "x"))) {
                     $('#b1').text("o");
-                    turn = 0;
+                    move = 0;
         }
                     else{
                     if (b2 == "" && ((b3 == "x" && b1 == "x") || (t2 == "x" && m2 == "x"))) {
                         $('#b2').text("o");
-                        turn = 0;
+                        move = 0;
         }
                         else{
                         if (m1 == "" && ((m3 == "x" && m2 == "x") || (t1 == "x" && b1 == "x"))) {
                             $('#m1').text("o");
-                            turn = 0;
+                            move = 0;
         }
                             else{
                             if (m3 == "" && ((t3 == "x" && b3 == "x") || (m2 == "x" && m1 == "x"))) {
                                 $('#m3').text("o");
-                                turn = 0;
+                                move = 0;
         }
                                 else{
                                 if (m2 == "" && ((t3 == "x" && b1 == "x") || (b3 == "x" && t1 == "x") || (m3 == "x" && m1 == "x") || (b2 == "x" && t2 == "x"))) {
                                     $('#m2').text("o");
-                                    turn = 0;
+                                    move = 0;
         }
-                                   else{ // IF NO OPP TO BLOCK A WIN, THEN PLAY IN ONE OF THESE SQUARES
+                                   else{
                                     if (m2 == "") {
                                         $('#m2').text("o");
-                                        turn = 0;
+                                        move = 0;
 
                                     }
                                         else{
                                         if (t1 == "") {
                                             $('#t1').text("o");
-                                            turn = 0;
+                                            move = 0;
 
                                     }
                                             else{
                                             if (b3 == "") {
                                             $('#b3').text("o");
-                                            turn = 0;
+                                            move = 0;
 
                                     }
                                                 else {
                                                 if (b2 == "") {
                                             $('#b2').text("o");
-                                            turn = 0;
+                                            move = 0;
 
                                     }
                                                     else{
                                                     if (m1 == "") {
                                             $('#m1').text("o");
-                                            turn = 0;
+                                            move = 0;
 
                                     }
                                                     }
@@ -132,10 +129,9 @@ var aiMove = function () {
             }
         }
     }
-    alterPlayer();
 };
 
-boardCheck = function () {
+tableCheck = function () {
     t1 = $('#t1').html();
     t2 = $('#t2').html();
     t3 = $('#t3').html();
@@ -147,7 +143,7 @@ boardCheck = function () {
     b3 = $('#b3').html();
 };
 
-checkWin = function () {
+checkForWinner = function () {
     if ((t1 == t2 && t1 == t3 && (t1 == "x")) ||
     (m1 == m2 && m1 == m3 && (m1 == "x")) ||
     (b1 == b2 && b1 == b3 && (b1 == "x")) ||
@@ -158,11 +154,11 @@ checkWin = function () {
     (t3 == m2 && t3 == b1 && (t3 == "x"))
     ) {
         xWin = true;
-        winAlert();
+        alert("Player X Wins!");
         counter_X ++;
         counterX();
-
-    } else {
+    }
+    else {
         if ((t1 == t2 && t1 == t3 && (t1 == "o")) ||
         (m1 == m2 && m1 == m3 && (m1 == "o")) ||
         (b1 == b2 && b1 == b3 && (b1 == "o")) ||
@@ -173,11 +169,11 @@ checkWin = function () {
         (t3 == m2 && t3 == b1 && (t3 == "o"))
         ) {
             oWin = true;
-            winAlert();
+            alert("Player AI Wins!");
             counter_O ++;
             counterO();
-
-        } else {
+        }
+        else {
             if (((t1 == "x") || (t1 == "o")) && ((m1 == "x") || (m1 == "o")) && ((b1 == "x") || (b1 == "o")) && ((t2 == "x") || (t2 == "o")) && ((m2 == "x") || (m2 == "o")) && ((b2 == "x") || (b2 == "o")) && ((t3 == "x") || (t3 == "o")) && ((m3 == "x") || (m3 == "o")) && ((b3 == "x") || (b3 == "o"))) {
                 alert("Draw!");
             }
@@ -185,28 +181,24 @@ checkWin = function () {
     }
 };
 
-var winAlert = function () {
-    if (xWin == true) {
-        alert("Player X won!");
-    } else {
-        if (oWin == true) {
-            alert("Player AI won!");
-        }
-    }
-};
-
-$('#reset').click(function(){
-        var space1 = $("#board tr:nth-child(1) td:nth-child(1)").html('');
-        var space2 = $("#board tr:nth-child(1) td:nth-child(2)").html('');
-        var space3 = $("#board tr:nth-child(1) td:nth-child(3)").html('');
-        var space4 = $("#board tr:nth-child(2) td:nth-child(1)").html('');
-        var space5 = $("#board tr:nth-child(2) td:nth-child(2)").html('');
-        var space6 = $("#board tr:nth-child(2) td:nth-child(3)").html('');
-        var space7 = $("#board tr:nth-child(3) td:nth-child(1)").html('');
-        var space8 = $("#board tr:nth-child(3) td:nth-child(2)").html('');
-        var space9 = $("#board tr:nth-child(3) td:nth-child(3)").html('');
-        xWin = false;
-        oWin = false;
-        newGame();
-        location.reload();
+var clearBoard = $('#reset').click(function () {
+    a1 = $("#board tr:nth-child(1) td:nth-child(1)").html("");
+    b1 = $("#board tr:nth-child(1) td:nth-child(2)").html("");
+    c1 = $("#board tr:nth-child(1) td:nth-child(3)").html("");
+    a2 = $("#board tr:nth-child(2) td:nth-child(1)").html("");
+    b2 = $("#board tr:nth-child(2) td:nth-child(2)").html("");
+    c2 = $("#board tr:nth-child(2) td:nth-child(3)").html("");
+    a3 = $("#board tr:nth-child(3) td:nth-child(1)").html("");
+    b3 = $("#board tr:nth-child(3) td:nth-child(2)").html("");
+    c3 = $("#board tr:nth-child(3) td:nth-child(3)").html("");
+    xWin = false;
+    oWin = false;
+    newGame();
 });
+
+function counterX () {
+  $('.player_x').text(counter_X);
+};
+function counterO () {
+  $('.player_o').text(counter_O);
+};

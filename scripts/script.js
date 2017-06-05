@@ -5,15 +5,6 @@ $(document).ready(function(){
   var lastMove = 'X';
   var counter_X = 0;
   var counter_O = 0;
-  var t1;
-  var t2;
-  var t3;
-  var m1;
-  var m2;
-  var m3;
-  var b1;
-  var b2;
-  var b3;
 
   $("#board tr td").click(function() {
     if ($(this).text()=="" && play) {

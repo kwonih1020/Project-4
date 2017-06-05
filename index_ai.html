@@ -8,9 +8,10 @@
   </head>
   <body>
     <header> T.ICK-Tac-Toe</header>
-
-      <p class="player">Player against: AI</p>
-
+    <div class="indicator">
+      <p class="player">Player :</p>
+      <p class="name">X</p>
+    </div>
 
     <table id="board">
       <tr class="row">
@@ -22,10 +23,23 @@
       <tr class="row">
         <td id="b1"></td><td id="b2"></td><td id="b3"></td>
       </tr>
+
+      <div class="counter">
+        <p class="counter_name">Points</p>
+        <div class="points_x">
+          <li class="player_x_name">X  :</li>
+          <li class="player_x"></li>
+        </div>
+        <div class="points_o">
+          <li class="player_o_name">O  :</li>
+          <li class="player_o"></li>
+        </div>
+      </div>
+
     </table>
 
     <button id="reset">Reset</button>
-    <button id="normal"><a href="index.html">Back</button>
+    <button id="normal"><a href="index.html">Normal Mode</button>
   </body>
 
   <script src="scripts/jquery-3.2.1.min.js"></script>
