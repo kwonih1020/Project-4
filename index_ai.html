@@ -9,33 +9,19 @@
   <body>
     <header> T.ICK-Tac-Toe</header>
 
-    <div class="indicator">
-      <p class="player">Player :</p>
-      <p class="name">X</p>
-    </div>
+      <p class="player">Player against: AI</p>
+
 
     <table id="board">
-      <tr>
-        <td></td><td></td><td></td>
+      <tr class="row">
+        <td id="t1"></td><td id="t2"></td><td id="t3"></td>
       </tr>
-      <tr>
-        <td></td><td></td><td></td>
+      <tr class="row">
+        <td id="m1"></td><td id="m2"></td><td id="m3"></td>
       </tr>
-      <tr>
-        <td></td><td></td><td></td>
+      <tr class="row">
+        <td id="b1"></td><td id="b2"></td><td id="b3"></td>
       </tr>
-
-      <div class="counter">
-        <p class="counter_name">Points</p>
-        <div class="points_x">
-          <li class="player_x_name">X  :</li>
-          <li class="player_x"></li>
-        </div>
-        <div class="points_o">
-          <li class="player_o_name">O  :</li>
-          <li class="player_o"></li>
-        </div>
-      </div>
     </table>
 
     <button id="reset">Reset</button>
