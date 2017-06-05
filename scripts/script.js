@@ -14,13 +14,15 @@ $(document).ready(function(){
         move++;
 
       if (checkForWinner()!=-1 && checkForWinner()!="") {
-	     if (checkForWinner()=="X") { alert("Player X Wins!");
+	     if (checkForWinner()=="X") {
+          alert("Player X Wins!");
           counter_X ++;
           counterX();
       }
-        else { alert("Player O Wins!");
-          counter_O ++; //<--- Add +1 to the counter variable
-          counterO(); //<--- Add +1 to the counter display
+        else {
+          alert("Player O Wins!");
+          counter_O ++;
+          counterO();
         }
         play = true;
       };
@@ -82,5 +84,5 @@ $(document).ready(function(){
   function counterO () {
     $('.player_o').text(counter_O);
   };
-  
+
 })

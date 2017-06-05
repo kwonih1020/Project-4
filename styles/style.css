@@ -1,5 +1,5 @@
 html {
-  background: url(images/background_tic.jpg) no-repeat center center fixed;
+  background: url(../images/background_tic.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -38,15 +38,52 @@ header {
   position: relative;
 }
 
-button {
-  margin: -20px -42px;
+button#reset {
+  margin: -20px -45px;
   position: relative;
   top: 50%;
   left: 50%;
   margin-top: 200px;
 }
 
+button#ai {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  margin-top: 400px;
+  margin: -20px -48px;
+}
+
+button#back {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  margin-top: 400px;
+  margin: -20px -48px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 #reset {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  text-shadow: 1px 1px 3px #000000;
+  -webkit-box-shadow: 0px 1px 3px #000000;
+  -moz-box-shadow: 0px 1px 3px #000000;
+  box-shadow: 0px 1px 3px #000000;
+  color: #ffffff;
+  font-size: 14px;
+  background: #000000;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  font-family: 'Barrio', cursive;
+}
+
+#ai {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0px;
