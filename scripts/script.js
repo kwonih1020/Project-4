@@ -6,6 +6,7 @@ $(document).ready(function(){
   var counter_X = 0;
   var counter_O = 0;
 
+
   $("#board tr td").click(function() {
     if ($(this).text()=="" && play) {
       if ((move%2)==1) { $(this).append("X");
@@ -19,7 +20,7 @@ $(document).ready(function(){
           counter_X ++;
           counterX();
       }
-        else {
+        else if (checkForWinner()=="O"){
           alert("Player O Wins!");
           counter_O ++;
           counterO();
