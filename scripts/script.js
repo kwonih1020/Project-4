@@ -26,7 +26,10 @@ $("#board tr td").click(function() {
             counterO();
           })
         }
-      };
+      }
+      else {
+        alert("Draw")
+      }
     };
       alterPlayer();
   });
