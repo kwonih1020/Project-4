@@ -6,8 +6,7 @@ $(document).ready(function(){
   var counter_X = 0;
   var counter_O = 0;
 
-
-  $("#board tr td").click(function() {
+$("#board tr td").click(function() {
     if ($(this).text()=="" && play) {
       if ((move%2)==1) { $(this).append("X");
     }
@@ -25,7 +24,6 @@ $(document).ready(function(){
           counter_O ++;
           counterO();
         }
-        play = true;
       };
     };
       alterPlayer();
@@ -85,5 +83,4 @@ $(document).ready(function(){
   function counterO () {
     $('.player_o').text(counter_O);
   };
-
 })
