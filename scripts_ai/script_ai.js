@@ -106,7 +106,7 @@ $(document).ready(function () {
     checkWinner(symbol);
   }
 
-  function compTurn() {
+  function aiTurn() {
     aiMove = null;
     checkRowsAI('o');
       if (aiMove === null) {
@@ -163,7 +163,7 @@ $(document).ready(function () {
             $(this).text('x').addClass('x taken');
             turns++;
             checkWinner(symbol);
-            compTurn();
+            aiTurn();
         }
     });
 

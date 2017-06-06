@@ -15,14 +15,16 @@ $("#board tr td").click(function() {
 
       if (checkForWinner()!=-1 && checkForWinner()!="") {
 	     if (checkForWinner()=="X") {
-          alert("Player X Wins!");
-          counter_X ++;
-          counterX();
-      }
-        else if (checkForWinner()=="O"){
-          alert("Player O Wins!");
-          counter_O ++;
-          counterO();
+          $('#messages').html("Player X Wins!").fadeIn().delay(3000).fadeOut(function(){
+            counter_X ++;
+            counterX();
+          })
+       }
+        else if (checkForWinner()=="O") {
+          $("#messages").html("Player O Wins!").fadeIn().delay(3000).fadeOut(function() {
+            counter_O ++;
+            counterO();
+          })
         }
       };
     };

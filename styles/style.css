@@ -151,3 +151,19 @@ li {
   left: 50%;
   margin-bottom: 10px;
 }
+
+#messages {
+  position: absolute;
+  top: 390px;
+  z-index: 10;
+  width: 240px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 5px;
+  display: none;
+  color: white;
+  font-family: 'Barrio', cursive;
+}
