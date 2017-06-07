@@ -54,6 +54,11 @@ button#normal {
   margin: -20px -70px;
 }
 
+button#normal:hover {
+  background: #e4e4e4;
+  text-decoration: none;
+}
+
 a {
   text-decoration: none;
   color: white;

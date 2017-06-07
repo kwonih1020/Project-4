@@ -54,6 +54,11 @@ button#ai {
   margin: -20px -48px;
 }
 
+button#ai:hover {
+  background: #e4e4e4;
+  text-decoration: none;
+}
+
 button#back {
   position: absolute;
   top: 83%;

@@ -40,12 +40,11 @@ $(".board tr td").click(function() {
           })
         }
       }
-      else if  (
-                (!!space1) && (!!space2) &&
+      else if ( (!!space1) && (!!space2) &&
                 (!!space3) && (!!space4) &&
                 (!!space5) && (!!space6) &&
-                (!!space7) && (!!space8) && (!!space9)
-               ) {
+                (!!space7) && (!!space8) &&
+                (!!space9) ) {
                   $("#messages").html("Draw!").fadeIn().delay(3000).fadeOut();
                 }
     };
@@ -53,9 +52,9 @@ $(".board tr td").click(function() {
   });
 
   function checkForWinner() {
-    let result = checkForWinnerInternal()
+    let result = checkForWinnerInternal();
     console.log("result", result);
-    return result
+    return result;
   }
 
   function checkForWinnerInternal(){
