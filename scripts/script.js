@@ -27,9 +27,6 @@ $("#board tr td").click(function() {
           })
         }
       }
-      else {
-        alert("Draw")
-      }
     };
       alterPlayer();
   });
