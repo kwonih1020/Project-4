@@ -143,11 +143,15 @@ $(document).ready(function () {
                   counterX();
                 } else {
                   counter_O ++;
-                  counterO(symbol);
+                  counterO();
                 }
           });
         } else if (turns == 9) {
             $('#messages').html("Draw!").fadeIn().delay(3000).fadeOut();
+            counter_X ++;
+            counter_O ++;
+            counterX();
+            counterO();
           }
   }
 

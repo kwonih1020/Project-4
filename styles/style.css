@@ -11,12 +11,12 @@ table {
   border-spacing: 0;
 }
 
-#board {
+.board {
   margin: 0 auto;
   position: relative;
 }
 
-#board tr td {
+.board tr td {
   width: 90px;
   height: 90px;
   border: 3px solid #1c1c1c;
@@ -25,7 +25,7 @@ table {
   font-family: 'Barrio', cursive;
 }
 
-#board tr td:hover {
+.board tr td:hover {
   background: #e4e4e4;
   cursor: pointer;
 }
