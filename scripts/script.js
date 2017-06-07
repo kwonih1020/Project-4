@@ -11,7 +11,7 @@ $("#board tr td").click(function() {
       if ((move%2)==1) { $(this).append("X");
     }
       else { $(this).append("O"); }
-        move++;
+        move ++;
 
       if (checkForWinner()!=-1 && checkForWinner()!="") {
 	     if (checkForWinner()=="X") {
@@ -26,9 +26,9 @@ $("#board tr td").click(function() {
             counterO();
           })
         }
-      }
-    };
-      alterPlayer();
+      };
+      alterPlayer()
+    }
   });
 
   function checkForWinner() {
@@ -85,4 +85,5 @@ $("#board tr td").click(function() {
   function counterO () {
     $('.player_o').text(counter_O);
   };
+
 })

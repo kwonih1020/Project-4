@@ -157,7 +157,7 @@ $(document).ready(function () {
 
     $('#board td').on('click', function () {
         if ($(this).hasClass('taken')) {
-            $('#messages').html("square already taken").fadeIn().delay(4000).fadeOut();
+            $('#messages').html("square already taken").fadeIn().delay(3000).fadeOut();
         } else {
             symbol = 'x';
             $(this).text('x').addClass('x taken');
