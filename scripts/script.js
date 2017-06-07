@@ -6,8 +6,6 @@ $(document).ready(function(){
   var counter_X = 0;
   var counter_O = 0;
 
-
-
 $(".board tr td").click(function() {
 
   var space1 = $(".board #0").text();
@@ -27,7 +25,7 @@ $(".board tr td").click(function() {
         move ++;
 
       let winner = checkForWinner();
-      
+
       if (winner != -1 && winner != "") {
 	     if (winner == "X") {
           $('#messages').html("Player X Wins!").fadeIn().delay(3000).fadeOut(function(){
@@ -59,6 +57,7 @@ $(".board tr td").click(function() {
     console.log("result", result);
     return result
   }
+
   function checkForWinnerInternal(){
     var space1 = $(".board #0").text();
     var space2 = $(".board #1").text();
@@ -110,6 +109,7 @@ $(".board tr td").click(function() {
   function counterX () {
     $('.player_x').text(counter_X);
   };
+
   function counterO () {
     $('.player_o').text(counter_O);
   };
