@@ -25,6 +25,7 @@ $(".board tr td").click(function() {
         move ++;
 
       let winner = checkForWinner();
+      let draw = checkForDraw();
 
       if (winner != -1 && winner != "") {
 	     if (winner == "X") {
@@ -40,13 +41,6 @@ $(".board tr td").click(function() {
           })
         }
       }
-      else if ( (!!space1) && (!!space2) &&
-                (!!space3) && (!!space4) &&
-                (!!space5) && (!!space6) &&
-                (!!space7) && (!!space8) &&
-                (!!space9) ) {
-                  $("#messages").html("Draw!").fadeIn().delay(3000).fadeOut();
-                }
     };
     alterPlayer();
   });
@@ -57,7 +51,31 @@ $(".board tr td").click(function() {
     return result;
   }
 
-  function checkForWinnerInternal(){
+  function checkForDraw() {
+    var space1 = $(".board #0").text();
+    var space2 = $(".board #1").text();
+    var space3 = $(".board #2").text();
+    var space4 = $(".board #3").text();
+    var space5 = $(".board #4").text();
+    var space6 = $(".board #5").text();
+    var space7 = $(".board #6").text();
+    var space8 = $(".board #7").text();
+    var space9 = $(".board #8").text();
+
+        if (   (!!space1) && (!!space2) &&
+           (!!space3) && (!!space4) &&
+           (!!space5) && (!!space6) &&
+           (!!space7) && (!!space8) &&
+           (!!space9) ) {
+             $("#messages").html("Draw!").fadeIn().delay(3000).fadeOut();
+             counter_X ++;
+             counter_O ++;
+             counterX();
+             counterO();
+           }
+  }
+
+  function checkForWinnerInternal() {
     var space1 = $(".board #0").text();
     var space2 = $(".board #1").text();
     var space3 = $(".board #2").text();
