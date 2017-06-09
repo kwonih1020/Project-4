@@ -52,6 +52,6 @@
 
 
 
-Screenshot:
+## Screenshot:
 
-    ![alt text](https://raw.githubusercontent.com/kwonih1020/Project-4/master/screenshots/ScreenShot1.png)
+    ![Alt text](http://i.imgur.com/BE4eM5L.png "Normal Mode")
