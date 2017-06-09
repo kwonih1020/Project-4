@@ -50,6 +50,8 @@
 
     Gold: Make two player play each other through separated device by using socket.io method.
 
-## Screenshot:
+
+
+Screenshot:
 
     ![alt text](https://raw.githubusercontent.com/kwonih1020/Project-4/master/screenshots/ScreenShot1.png)
