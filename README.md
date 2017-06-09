@@ -52,4 +52,4 @@
 
 ## Screenshot:
 
-    ![](screenshots/ScreenShot1.png)
+    <img src="screenshots/ScreenShot1.png">
