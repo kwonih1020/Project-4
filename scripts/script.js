@@ -1,10 +1,14 @@
 $(document).ready(function(){
 
+  // Game variables
   var move = 1;
   var play = true;
   var lastMove = 'X';
   var counter_X = 0;
   var counter_O = 0;
+
+
+// start the game, click events
 
 $(".board tr td").click(function() {
 
@@ -28,13 +32,18 @@ $(".board tr td").click(function() {
       let draw = checkForDraw();
 
       if (winner != -1 && winner != "") {
+
+        // if player "x" wins
 	     if (winner == "X") {
+         // pop up messgae
           $('#messages').html("Player X Wins!").fadeIn().delay(3000).fadeOut(function(){
             counter_X ++;
             counterX();
           })
        }
+       // if player "o" wins
         else if (winner == "O") {
+          // pop up messgae
           $("#messages").html("Player O Wins!").fadeIn().delay(3000).fadeOut(function() {
             counter_O ++;
             counterO();
@@ -50,6 +59,8 @@ $(".board tr td").click(function() {
     console.log("result", result);
     return result;
   }
+
+  // function to check tie Game
 
   function checkForDraw() {
     var space1 = $(".board #0").text();
@@ -75,6 +86,7 @@ $(".board tr td").click(function() {
            }
   }
 
+  // function to check winner
   function checkForWinnerInternal() {
     var space1 = $(".board #0").text();
     var space2 = $(".board #1").text();
@@ -100,6 +112,8 @@ $(".board tr td").click(function() {
     return -1;
   };
 
+  // function to clear the board
+
   $('#reset').click(function(){
           var space1 = $(".board #0").text('');
           var space2 = $(".board #1").text('');
@@ -112,6 +126,8 @@ $(".board tr td").click(function() {
           var space9 = $(".board #8").text('');
         });
 
+  // function to alternate the player
+
   function alterPlayer () {
     if(lastMove === 'X') {
       lastMove = 'O';
@@ -122,6 +138,9 @@ $(".board tr td").click(function() {
         $('.name').text('X');
     }
   };
+
+
+  // function to show points
 
   function counterX () {
     $('.player_x').text(counter_X);
