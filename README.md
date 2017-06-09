@@ -32,6 +32,7 @@
     2. Selection for Player X or O for both Normal and AI mode.
     3. Level of difficulty: Low, Medium, High.
     4. More CSS OR jQuery animation.
+    5. Function that not allow to click on the square which already taken.
 
 ## User Stories:
     1. As a user, I should be able to start with first move.
