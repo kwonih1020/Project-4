@@ -52,6 +52,6 @@
 
 ## Screenshot:
 
-    ![Alt text](/screenshots/ScreenShot1.png?raw=true "Screenshot for normal mode")
+    ![Alt text](/Users/kwonih1020/wdi/Projects/Project-4/screenshots/ScreenShot1.png "Screenshot for normal mode")
 
-    ![Alt text](/screenshots/ScreenShot2.png?raw=true "Screenshot for AI mode")
+    ![Alt text](/Users/kwonih1020/wdi/Projects/Project-4/screenshots/ScreenShot2.png "Screenshot for AI mode")
