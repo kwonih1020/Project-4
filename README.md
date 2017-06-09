@@ -57,8 +57,8 @@
 
 ![ScreenShot](http://i.imgur.com/BE4eM5L.png "Normal Mode")
 
-"Screenshot for Normal Mode"
+"Screenshot for AI Mode"
 
 ![ScreenShot](http://i.imgur.com/N7EFN6z.png "AI Mode")
 
-"Screenshot for AI Mode"
+"Screenshot for Normal Mode"
