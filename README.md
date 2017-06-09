@@ -54,4 +54,4 @@
 
 ## Screenshot:
 
-    ![ScreenShot](http://imgur.com/BE4eM5L "Normal Mode")
+    ![ScreenShot](http://i.imgur.com/BE4eM5L.png "Normal Mode")
