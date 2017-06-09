@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+  // Game Varables
   var turns = 0;
   var symbol;
   var rand;
@@ -8,6 +9,7 @@ $(document).ready(function () {
   var counter_X = 0;
   var counter_O = 0;
 
+  // Board variables
   var t1 = $('#t1');
   var t2 = $('#t2');
   var t3 = $('#t3');
@@ -18,6 +20,7 @@ $(document).ready(function () {
   var b2 = $('#b2');
   var b3 = $('#b3');
 
+  // Board reset
   function reset() {
     $("#board td").text("");
     $("#board td").removeClass('o x taken');
@@ -26,6 +29,9 @@ $(document).ready(function () {
   };
 
   function checkRowsAI(symbol) {
+
+    // check if 2 tables in a row are filled in and go in missiing table.
+
     if (t1.hasClass(symbol) && t2.hasClass(symbol) && !t3.hasClass('taken')) {
       aiMove = t3;
     } else if (t1.hasClass(symbol) && t3.hasClass(symbol) && !t2.hasClass('taken')) {
@@ -92,6 +98,9 @@ $(document).ready(function () {
   }
 
   function randomValue() {
+
+    // spot array for random value
+
     squares = [t1, t2, t3,
                m1, m2, m3,
                b1, b2, b3]
@@ -107,11 +116,23 @@ $(document).ready(function () {
   }
 
   function aiTurn() {
+
+    // AI turn
+
     aiMove = null;
+
+    // check for two player "o" in a row.
+
     checkRowsAI('o');
       if (aiMove === null) {
+
+        // check for two player "x" in a row
+
         checkRowsAI('x');
       if (aiMove === null) {
+
+        // choose random square
+
         do {
             randomValue();
         }
@@ -119,14 +140,23 @@ $(document).ready(function () {
             aiMove = rand;
             compMove();
         } else {
+
+          // AI pick
+
             compMove();
           }
         } else {
+
+          // AI pick
+
             compMove();
         }
   }
 
   function checkWinner(symbol) {
+
+    // check if 3 same "x" of "o" in a row
+
     if (t1.hasClass(symbol) && t2.hasClass(symbol) && t3.hasClass(symbol) ||
         m1.hasClass(symbol) && m2.hasClass(symbol) && m3.hasClass(symbol) ||
         b1.hasClass(symbol) && b2.hasClass(symbol) && b3.hasClass(symbol) ||
@@ -135,6 +165,8 @@ $(document).ready(function () {
         t3.hasClass(symbol) && m3.hasClass(symbol) && b3.hasClass(symbol) ||
         t1.hasClass(symbol) && m2.hasClass(symbol) && b3.hasClass(symbol) ||
         t3.hasClass(symbol) && m2.hasClass(symbol) && b1.hasClass(symbol)) {
+
+          // pop up messages
 
           $('#messages').html(symbol + " is the Winner!").fadeIn().delay(3000).fadeOut(function () {
               win = true;
@@ -155,9 +187,13 @@ $(document).ready(function () {
           }
   }
 
+    // reset click events
+
     $('#reset').on('click', function () {
         reset();
     });
+
+    // Player turn
 
     $('#board td').on('click', function () {
         if ($(this).hasClass('taken')) {
@@ -170,6 +206,8 @@ $(document).ready(function () {
             aiTurn();
         }
     });
+
+    // Points counter
 
   function counterX () {
     $('.player_x').text(counter_X);
