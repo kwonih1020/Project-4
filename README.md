@@ -52,4 +52,4 @@
 
 ## Screenshot:
 
-    ![](https://github.com/kwonih1020/Project-4/blob/master/screenshots/ScreenShot1.png)
+    ![alt](https://github.com/kwonih1020/Project-4/blob/master/screenshots/ScreenShot1.png)
