@@ -1,4 +1,4 @@
-# Project-4 = " T.Ick-Tac-Toe "
+# Project-4 "T.Ick-Tac-Toe"
 
 ## Technologies Used:
 
