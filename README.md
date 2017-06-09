@@ -52,6 +52,6 @@
 
 ## Screenshot:
 
-    ![Alt text](/Users/kwonih1020/wdi/Projects/Project-4/screenshots/ScreenShot1.png "Screenshot for normal mode")
+    <img width="727" alt="screenshot1" src="https://user-images.githubusercontent.com/26310384/26957971-2b25b0b0-4c96-11e7-829f-7439daf09ce2.png">
 
     ![Alt text](/Users/kwonih1020/wdi/Projects/Project-4/screenshots/ScreenShot2.png "Screenshot for AI mode")
