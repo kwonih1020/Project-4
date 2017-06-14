@@ -47,8 +47,8 @@ button#reset {
 }
 
 button#ai {
-  position: absolute;
-  top: 83%;
+  position: fixed;
+  top: 78%;
   left: 50%;
   margin-top: 400px;
   margin: -20px -48px;
